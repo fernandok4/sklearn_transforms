@@ -23,7 +23,7 @@ class SmoteDataset(BaseEstimator, TransformerMixin):
     def fit(self, X, y):
         XCopy = X.copy()
         YCopy = y.copy()
-        sm = SMOTE(random_state=0, k_neighbors = k_neighbors)
+        sm = SMOTE(random_state=0, k_neighbors = self.k)
         return sm.fit_sample(XCopy, YCopy)
 
     def transform(self, X, Y, k_neighbors):
