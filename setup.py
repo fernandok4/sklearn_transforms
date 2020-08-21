@@ -13,7 +13,8 @@ setup(
       author_email='vnderlev@protonmail.ch',
       license='BSD',
       packages=[
-            'my_custom_sklearn_transforms'
+            'my_custom_sklearn_transforms', 
+            'imbalanced-learn'
       ],
       zip_safe=False
 )
