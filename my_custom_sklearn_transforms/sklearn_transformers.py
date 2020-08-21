@@ -20,11 +20,11 @@ class SmoteDataset(BaseEstimator, TransformerMixin):
     def __init__(self, k):
         self.k = k
 
-    def fit(self, X, y=None):
-        return self
-
-    def transform(self, X, Y, k_neighbors):
+    def fit(self, X, y):
         XCopy = X.copy()
-        YCopy = Y.copy()
+        YCopy = y.copy()
         sm = SMOTE(random_state=0, k_neighbors = k_neighbors)
         return sm.fit_sample(XCopy, YCopy)
+
+    def transform(self, X, Y, k_neighbors):
+        return self
